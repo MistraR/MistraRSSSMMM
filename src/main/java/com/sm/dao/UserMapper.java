@@ -3,6 +3,7 @@ package com.sm.dao;
 import com.sm.po.User;
 import com.sm.po.UserExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     int countByExample(UserExample example);
@@ -19,9 +20,9 @@ public interface UserMapper {
 
     User selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(User record, UserExample example);
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
 
-    int updateByExample(User record,UserExample example);
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
 
     int updateByPrimaryKeySelective(User record);
 

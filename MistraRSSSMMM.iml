@@ -33,6 +33,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.beanshell:bsh:2.0b4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.27" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.yaml:snakeyaml:1.12" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ibatis:ibatis-sqlmap:2.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.ibatis:ibatis-core:3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:4.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.plugins:maven-clean-plugin:2.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-plugin-api:2.0.6" level="project" />
