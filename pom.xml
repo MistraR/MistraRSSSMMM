@@ -11,7 +11,7 @@
 
   <properties>
     <file.encoding>UTF-8</file.encoding>
-    <spring.version>4.2.2.RELEASE</spring.version>
+    <spring.version>3.2.0.RELEASE</spring.version>
     <mysql.version>5.1.29</mysql.version>
     <servlet.version>3.0-alpha-1</servlet.version>
     <aspectj.version>1.8.1</aspectj.version>
@@ -105,7 +105,12 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>3.0.4.RELEASE</version>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <!-- mybatis-spring -->
     <dependency>
@@ -132,16 +137,21 @@
       <version>${mysql.version}</version>
     </dependency>
     <!--依赖的Web类库-->
-    <dependency>
+    <!--<dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
       <scope>provided</scope>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjweaver</artifactId>
       <version>${aspectj.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>1.9.11</version>
     </dependency>
     <!--依赖的测试类库-->
     <dependency>

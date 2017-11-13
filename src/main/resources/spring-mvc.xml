@@ -21,28 +21,42 @@
     <!-- 为controller加上自动代理 -->
     <aop:aspectj-autoproxy proxy-target-class="true" />
     <!-- controller包(自动注入) -->
+    <context:component-scan base-package="com.sm.serviceimpl" />
     <context:component-scan base-package="com.sm.controller" />
 
+
     <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
-    <bean id="mappingJacksonHttpMessageConverter"
+   <!-- <bean id="mappingJacksonHttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>
                 <value>text/html;charset=UTF-8</value>
             </list>
         </property>
-    </bean>
+    </bean>-->
     <!-- **********开启注解***********
     spring3.1之前DefaultAnnotionHandlerMapping AnnotionMethodHandlerAdapter
     spring3.1之后RequestMappingHandlerMapping RequestMappingHandlerAdapter -->
     <!-- 启动Spring MVC 的注解功能,完成请求和注解POJO的映射 即启用@RequestMapping -->
-    <bean
+   <!-- <bean
             class="org.springframework.web.servlet.mvc.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
-                <ref bean="mappingJacksonHttpMessageConverter" />  <!-- json转换器 -->
+                <ref bean="mappingJacksonHttpMessageConverter" />  &lt;!&ndash; json转换器 &ndash;&gt;
             </list>
         </property>
+    </bean>-->
+
+    <bean
+            class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="mappingJacksonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+    <bean id="mappingJacksonHttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
     </bean>
 
     <!-- 视图解析器对模型视图名称的解析,即在模型视图名称添加前后缀 -->
