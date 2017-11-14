@@ -1,4 +1,4 @@
-package com.sm.dao;
+package com.sm.mapper;
 
 import com.sm.po.User;
 import com.sm.po.UserExample;

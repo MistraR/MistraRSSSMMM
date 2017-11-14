@@ -18,6 +18,7 @@ public class UserAddController {
 
     @RequestMapping("/userAdd.do")
     public String UserAdd(User user, Model model){
+        System.out.println(user.toString());
         if(userService.insertSelective(user)>0){
             model.addAttribute("successMsg", "注册成功！");
             model.addAttribute("name", user.getUsername());

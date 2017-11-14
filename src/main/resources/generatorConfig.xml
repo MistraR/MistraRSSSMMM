@@ -6,7 +6,7 @@
 
     <!-- 指定数据库连接驱动地址 -->
     <!--<classPathEntry location="D:\jarPackage\mysqlforjdbc\mysql-connector-java-5.1.7-bin.jar" />-->
-    <classPathEntry location="‪F:\jarPackage\mysqlforjdbc\mysql-connector-java-5.1.17-bin.jar" />
+    <classPathEntry location="D:\jarPackage\mysqlforjdbc\mysql-connector-java-5.1.7-bin.jar" />
 
     <!-- 一个数据库一个 context -->
     <context id="testTables" targetRuntime="MyBatis3">
@@ -38,12 +38,12 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!-- targetProject:mapper.xml映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="com.sm.mapping" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.sm.mapper" targetProject="src/main/resources">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
         <!-- targetPackage：mapper接口生成的位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sm.dao" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sm.mapper" targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>

@@ -1,6 +1,6 @@
 package com.sm.serviceimpl;
 
-import com.sm.dao.UserMapper;
+import com.sm.mapper.UserMapper;
 import com.sm.po.User;
 import com.sm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService{
     private UserMapper userMapperDao;
 
     public int insertSelective(User user) {
-        return userMapperDao.insert(user);
+        return userMapperDao.insertSelective(user);
     }
 
 }

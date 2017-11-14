@@ -18,8 +18,10 @@
         http://www.springmodules.org/schema/ehcache http://www.springmodules.org/schema/cache/springmodules-ehcache.xsd">
     <!-- 引入属性文件
     <context:property-placeholder location="classpath:jdbc.properties" />
+
     &lt;!&ndash; 自动扫描(自动注入) &ndash;&gt;
     <context:component-scan base-package="com.sm.service" />-->
+    <context:property-placeholder location="classpath:jdbc.properties" />
     <!-- 配置数据源 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -33,11 +35,11 @@
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
         <property name="configLocation" value="classpath:mybatis-config.xml" />
-        <property name="mapperLocations" value="classpath*:com/sm/mapping/*.xml" />
+        <property name="mapperLocations" value="classpath*:com/sm/mapper/*.xml" />
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage"  value="com.sm.dao" />
+        <property name="basePackage"  value="com.sm.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
     <!-- 配置事务管理器 -->
