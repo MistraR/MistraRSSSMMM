@@ -16,16 +16,20 @@ public class UserAddController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/index.do")
+    public String addPage(){
+        return "addUser";
+    }
+
     @RequestMapping("/userAdd.do")
     public String UserAdd(User user, Model model){
-        System.out.println(user.toString());
         if(userService.insertSelective(user)>0){
             model.addAttribute("successMsg", "注册成功！");
             model.addAttribute("name", user.getUsername());
-            return "/success";//返回的页面
+            return "success";//返回的页面
         }else{
             model.addAttribute("failMsg", "注册失败！");
-            return "/fail";
+            return "fail";
         }
     }
 }
